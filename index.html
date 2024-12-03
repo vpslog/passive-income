@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Monitor Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- 引入 FontAwesome -->
+</head>
+<body>
+    <div id="app">
+        <!-- 右上角的 Github 和 Telegram 链接 -->
+        <div class="header-links">
+            <a href="https://github.com/vpslog/vps-stock-monitor" target="_blank">
+                <i class="fab fa-github">&nbsp; Github/文档</i> <!-- GitHub 图标 -->
+            </a>
+            <a href="https://t.me/vpalogchat" target="_blank">
+                <i class="fab fa-telegram-plane">&nbsp; Telegram 交流群</i> <!-- Telegram 图标 -->
+            </a>
+        </div>
+        <h2>配置</h2>
+        <el-form label-position="top" label-width="120px">
+            <el-form-item label="Peer2Profit">
+                <el-input v-model="config.peer2profit" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="Proxyrack UUID">
+                <el-input v-model="config.proxyrack" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="TrafficMonetizer Token">
+                <el-input v-model="config.trafficmonetizer" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="PacketStream CID">
+                <el-input v-model="config.packetstream" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="Repocket Email">
+                <el-input v-model="config.repocket_email" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="Repocket Key">
+                <el-input v-model="config.repocket_key" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="EarnFM Token">
+                <el-input v-model="config.earnfm" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-form-item label="Peer2Profit Email">
+                <el-input v-model="config.peer2profit_email" placeholder="不填则不运行"></el-input>
+            </el-form-item>
+
+            <el-button type="primary" @click="generateCommand">生成链接</el-button>
+
+            <el-form-item label="生成的命令">
+                <el-input type="textarea" :rows="6" v-model="generatedCommand" readonly></el-input>
+            </el-form-item>
+        </el-form>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/element-plus/dist/index.full.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    config: {
+                        earnfm: '',
+                        repocket_email: '',
+                        repocket_key: '',
+                        packetstream: '',
+                        trafficmonetizer: '',
+                        proxyrack: '',
+                        peer2profit: '',
+                        peer2profit_email: ''
+                    },
+                    generatedCommand: ''
+                };
+            },
+            methods: {
+                generateCommand() {
+                    let command = 'bash <(curl -s https://raw.githubusercontent.com/vpslog/passive-income/refs/heads/main/passive-income.sh)';
+
+                    if (this.config.earnfm) {
+                        command += ` --earnfm "${this.config.earnfm}"`;
+                    }
+                    if (this.config.repocket_email) {
+                        command += ` --repocket_email "${this.config.repocket_email}"`;
+                    }
+                    if (this.config.repocket_key) {
+                        command += ` --repocket_key "${this.config.repocket_key}"`;
+                    }
+                    if (this.config.packetstream) {
+                        command += ` --packetstream "${this.config.packetstream}"`;
+                    }
+                    if (this.config.trafficmonetizer) {
+                        command += ` --trafficmonetizer "${this.config.trafficmonetizer}"`;
+                    }
+                    if (this.config.proxyrack) {
+                        command += ` --proxyrack "${this.config.proxyrack}"`;
+                    }
+                    if (this.config.peer2profit) {
+                        command += ` --peer2profit "${this.config.peer2profit}"`;
+                    }
+                    if (this.config.peer2profit_email) {
+                        command += ` --peer2profit_email "${this.config.peer2profit_email}"`;
+                    }
+
+                    this.generatedCommand = command;
+                }
+            }
+        });
+
+        app.use(ElementPlus);
+        app.mount('#app');
+    </script>
+</body>
+</html>
