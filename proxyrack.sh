@@ -65,4 +65,4 @@ EOF
 
 # 赋予执行权限
 chmod +x $ADD_SCRIPT
-echo "生成 $ADD_SCRIPT 完成！请使用 ./$ADD_SCRIPT 执行脚本完成添加"
+echo "生成 $ADD_SCRIPT 完成！请五分钟后使用 ./$ADD_SCRIPT 执行脚本完成添加"
