@@ -22,7 +22,7 @@ echo "生成的 Device ID: $DEVICE_ID"
 
 # 3. 运行 Proxyrack 容器
 echo "启动 Proxyrack 容器..."
-sudo docker run -d --name proxyrack --restart always -e UUID="$DEVICE_ID" proxyrack/pop
+sudo docker run -d --name passive-income-proxyrack --restart always -e UUID="$DEVICE_ID" proxyrack/pop
 if [ $? -ne 0 ]; then
     echo "启动 Proxyrack 容器失败！"
     exit 1
