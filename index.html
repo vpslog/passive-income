@@ -6,12 +6,93 @@
     <title>Stock Monitor Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- 引入 FontAwesome -->
+  <style>
+        /* 通用样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7fa;
+        }
+
+        /* #app 容器样式 */
+        #app {
+            max-width: 1200px; /* 最大宽度 */
+            margin: 0 auto;    /* 居中对齐 */
+            padding: 20px;
+        }
+
+        /* 屏幕宽度大于等于 768px 时，#app 容器宽度为 50% */
+        @media (min-width: 768px) {
+            #app {
+                width: 50%;
+            }
+        }
+
+        /* 屏幕宽度小于 768px 时，#app 容器占满全屏 */
+        @media (max-width: 768px) {
+            #app {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* 屏幕小于 768px 时调整字体 */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        /* 适应 Element Plus 组件的样式 */
+        el-button {
+            width: 100%;
+        }
+
+        /* 使链接不换行 */
+        .stock-link {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 右上角按钮位置 */
+        .header-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-links a {
+            color: #6c757d; /* 设置图标颜色为灰色 */
+            font-size: 20px; /* 调整字体大小 */
+            transition: color 0.3s ease; /* 平滑过渡效果 */
+        }
+
+        .header-links a:hover {
+            color: #007bff; /* 鼠标悬停时颜色变为蓝色 */
+        }
+
+        /* 屏幕小于 768px 时调整字体 */
+        @media (max-width: 768px) {
+            .header-links a {
+                font-size: 15px; /* 调整字体大小 */
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <!-- 右上角的 Github 和 Telegram 链接 -->
         <div class="header-links">
-            <a href="https://github.com/vpslog/vps-stock-monitor" target="_blank">
+            <a href="https://github.com/vpslog/passive-income" target="_blank">
                 <i class="fab fa-github">&nbsp; Github/文档</i> <!-- GitHub 图标 -->
             </a>
             <a href="https://t.me/vpalogchat" target="_blank">
