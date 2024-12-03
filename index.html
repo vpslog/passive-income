@@ -109,41 +109,37 @@
         ></el-alert>
         <h2>配置</h2>
         <el-form label-position="top" label-width="120px">
-            <el-form-item label="Peer2Profit">
+            <el-form-item label="Peer2Profit 邮箱">
                 <el-input v-model="config.peer2profit" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="Proxyrack UUID">
+            <el-form-item label="Proxyrack API 密钥">
                 <el-input v-model="config.proxyrack" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="TrafficMonetizer Token">
+            <el-form-item label="TrafficMonetizer 密钥">
                 <el-input v-model="config.trafficmonetizer" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="PacketStream CID">
+            <el-form-item label="PacketStream 四位ID">
                 <el-input v-model="config.packetstream" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="Repocket Email">
+            <el-form-item label="Repocket 邮箱">
                 <el-input v-model="config.repocket_email" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="Repocket Key">
+            <el-form-item label="Repocket 密钥">
                 <el-input v-model="config.repocket_key" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="EarnFM Token">
+            <el-form-item label="EarnFM 密钥">
                 <el-input v-model="config.earnfm" placeholder="不填则不运行"></el-input>
             </el-form-item>
 
-            <el-form-item label="Peer2Profit Email">
-                <el-input v-model="config.peer2profit_email" placeholder="不填则不运行"></el-input>
-            </el-form-item>
+            <el-button type="primary" @click="generateCommand">生成命令</el-button>
 
-            <el-button type="primary" @click="generateCommand">生成链接</el-button>
-
-            <el-form-item label="生成的命令">
+            <el-form-item label="生成的命令（复制到终端执行）">
                 <el-input type="textarea" :rows="6" v-model="generatedCommand" readonly></el-input>
             </el-form-item>
         </el-form>
