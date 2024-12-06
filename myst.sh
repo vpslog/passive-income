@@ -10,6 +10,9 @@ API_KEY=$1
 NEW_PASSWORD=$2
 BENEFICIARY=$3
 
+echo "install myst"
+docker run --log-opt max-size=10m --cap-add NET_ADMIN -d -p 4449:4449 --name passive-income-myst -v myst-data:/var/lib/mysterium-node --restart unless-stopped mysteriumnetwork/myst:latest service --agreed-terms-and-conditions
+
 # Step 1: 获取 Token
 TOKEN_RESPONSE=$(curl -s -X POST 'http://localhost:4449/tequilapi/auth/login' \
   -H 'Content-Type: application/json' \
