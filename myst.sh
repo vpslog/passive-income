@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# 检查输入参数
-if [ $# -lt 3 ]; then
-  echo "Usage: $0 <API_KEY> <NEW_PASSWORD> <BENEFICIARY>"
-  exit 1
-fi
+# # 检查输入参数
+# if [ $# -lt 3 ]; then
+#   echo "Usage: $0 <API_KEY> <NEW_PASSWORD> <BENEFICIARY>"
+#   exit 1
+# fi
 
-API_KEY=$1
-NEW_PASSWORD=$2
-BENEFICIARY=$3
+# API_KEY=$1
+# NEW_PASSWORD=$2
+# BENEFICIARY=$3
 
 echo "install myst"
 docker run --log-opt max-size=10m --cap-add NET_ADMIN -d -p 4449:4449 --name passive-income-myst -v myst-data:/var/lib/mysterium-node --restart unless-stopped mysteriumnetwork/myst:latest service --agreed-terms-and-conditions
