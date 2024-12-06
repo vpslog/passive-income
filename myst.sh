@@ -12,7 +12,8 @@ BENEFICIARY=$3
 
 echo "install myst"
 docker run --log-opt max-size=10m --cap-add NET_ADMIN -d -p 4449:4449 --name passive-income-myst -v myst-data:/var/lib/mysterium-node --restart unless-stopped mysteriumnetwork/myst:latest service --agreed-terms-and-conditions
-
+sudo docker run -d --restart=always --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup --include-stopped --include-restarting --revive-stopped --interval 60 passive-income-myst
+ 
 # Step 1: 获取 Token
 TOKEN_RESPONSE=$(curl -s -X POST 'http://localhost:4449/tequilapi/auth/login' \
   -H 'Content-Type: application/json' \
