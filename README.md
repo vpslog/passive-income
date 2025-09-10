@@ -9,13 +9,13 @@
 
 ## 使用说明
 
-本项目收集了几个相对靠谱的挂机获取被动收入平台。这几个都是 VPS 可挂机、并且可以用 docker 一键运行的。按照下面说明，注册各平台，并获取密钥等，复制到 [https://passive-income.pages.dev/](https://passive-income.pages.dev/) 生成一键运行命令，在 VPS 上运行即可。
+本项目收集了几个相对靠谱的挂机获取被动收入平台。这几个都是 VPS 可挂机、并且可以用 docker 一键运行的。**按照下面说明，注册各平台，并获取密钥等，复制到 [https://passive-income.pages.dev/](https://passive-income.pages.dev/) 生成一键运行命令，在 VPS 上运行即可**。
 
 ## 平台概述
 
 这里放的都是带有 推荐系统（AFF） 的链接，一些平台走推荐链接注册可以赠送初始余额（一般是 5 美元），同时平台会对我也有一定奖励。这不影响您的收益。
 
-### traffmonetizer
+### traffmonetizer (USDT 出金，近期收益低）
 
 首先通过邀请链接注册：[点此注册](https://traffmonetizer.com/?aff=1574337)
 
@@ -23,13 +23,13 @@
 
 左边找到 Your application token 栏，复制这个 Token 备用。
 
-### packetstream
+### packetstream (PayPal 出金，收益高，主力)
 
 首先 [点此AFF访问官网](https://packetstream.io/?psr=5vZe) 注册
 
 首页 Share PacketStream 栏，有个链接类似于`https://packetstream.io/?psr=5vZe`，复制最后四个代码（例如`5vZe`）备用。
 
-### repocket
+### repocket (USDT 出金，收益很低，聊胜于无)
 
 首先通过邀请链接注册：[点此注册](https://link.repocket.co/UY62)
 
@@ -37,7 +37,7 @@ repocket 的面板可以看到你当前在线的设备数、IP 地址以及相�
 
 转到 https://app.repocket.co/bandwidth-earnings 页面（也可以点击左侧的 Sell Internet），转到流量管理页面。复制这个 API Key 备用。
 
-### earnfm
+### earnfm (USDT 出金，收益一般)
 
 这个平台收益稍微少一点，对 IP 要求很高。
 
