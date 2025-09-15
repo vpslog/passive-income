@@ -85,13 +85,6 @@ if [ -n "$PEER2PROFIT_EMAIL" ]; then
     echo "Peer2Profit 容器已启动！"
 fi
 
-# Proxyrack
-if [ -n "$PROXYRACK_UUID" ]; then
-    echo "准备运行 Proxyrack 脚本..."
-    bash <(curl -s https://raw.githubusercontent.com/vpslog/passive-income/refs/heads/main/proxyrack.sh) --proxyrack "$PROXYRACK_UUID"
-    echo "Proxyrack 脚本已运行！"
-fi
-
 # PacketShare
 if [ -n "$PACKETSHARE_EMAIL" ] && [ -n "$PACKETSHARE_PASS" ]; then
     echo "准备启动 PacketShare 容器..."
@@ -109,5 +102,13 @@ if [ -n "$PROXYBASE_ID" ]; then
         --name passive-income-proxybase proxybase/proxybase:latest
     echo "Proxybase 容器已启动！"
 fi
+
+# Proxyrack
+if [ -n "$PROXYRACK_UUID" ]; then
+    echo "准备运行 Proxyrack 脚本..."
+    bash <(curl -s https://raw.githubusercontent.com/vpslog/passive-income/refs/heads/main/proxyrack.sh) --proxyrack "$PROXYRACK_UUID"
+    echo "Proxyrack 脚本已运行！"
+fi
+
 
 echo "所有操作完成！"
