@@ -71,7 +71,7 @@ fi
 # Traffmonetizer
 if [ -n "$TRAFFICMONETIZER_TOKEN" ]; then
     echo "准备启动 Traffmonetizer 容器..."
-    sudo docker run -d --name passive-income-traffmonetizer \
+    sudo docker run -d --restart=always --name passive-income-traffmonetizer \
         traffmonetizer/cli_v2 start accept --token "$TRAFFICMONETIZER_TOKEN"
     echo "Traffmonetizer 容器已启动！"
 fi
